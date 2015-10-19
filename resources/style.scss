@@ -1,0 +1,116 @@
+@import "fonts";
+@import "base";
+@import "value";
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.title {
+  color: $orange;
+  text-align: center;
+  border-bottom: 1px solid $pale-blue;
+  box-shadow: 0px 0px 5px rgba(black, 0.1);
+  padding-top: 20px;
+  font-size: 45px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+}
+
+.test-table {
+  display: table;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $vinous;
+  background: $pale-blue;
+  border-collapse:separate;
+  color: $brown;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 12px 0;
+
+  button {
+    float: right;
+    padding: 5px 10px;
+    border: 1px solid $light-grey;
+    background-color: $turquoise;
+
+    &:hover {
+      background: linear-gradient(to bottom, $blue, lighten($blue, 20%));
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+.table-caption {
+  display: table-caption;
+  width: 100%;
+  padding: 20px 0px;
+  overflow: hidden;
+}
+
+.test-title {
+  float: left;
+  font-size: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+}
+
+.table-body {
+  display: table-row-group;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  border:$light-grey 1px solid;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-header {
+  display: table-header-group;
+  background: $turquoise;
+}
+
+.lib-name {
+  width: 10%;
+}
+
+.lib-test-result {
+  width: 20%;
+}
+
+.code {
+  text-align: left;
+}
+
+
+

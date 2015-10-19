@@ -1,0 +1,10 @@
+/target
+.lein-deps-sum
+.lein-failures
+.lein-plugins
+.lein-repl-history
+/resources/public/js/compiled_
+.repl
+out/
+resources/test.js
+resources/style.css
