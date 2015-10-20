@@ -6,10 +6,3 @@
                               :dispatch cljs.pprint/code-dispatch
                               :right-margin 70))
       :func (fn ~args ~@fn-stuff)}))
-
-(defmacro defsource
-  {:arglists (:arglists (meta (var defn)))}
-  [fn-name args & defn-stuff]
-  `(do
-     (defn ~fn-name {:source ~defn-stuff} ~args ~@defn-stuff)
-     (var ~fn-name)))

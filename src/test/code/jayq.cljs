@@ -1,25 +1,31 @@
 (ns test.code.jayq
-  (:require [jayq.core :as jayq :refer [$]])
+  (:require [jayq.core :as jayq :refer [$]]
+            [cljs.pprint])
   (:require-macros [test.macros :refer [fn-with-source]]))
 
+(enable-console-print!)
+
 (def by-id (fn-with-source []
-                           ($ :#content)))
+                           ($ :#test-div)))
 
 (def by-class (fn-with-source []
-                              ($ :.container)))
+                              ($ :.test-div)))
+
+(def sel (fn-with-source []
+                         ($ ".test-div p")))
 
 (def append-elem! (fn-with-source []
-                                  (jayq/append ($ :#content) "<span class=\"testspan\"></span>")))
+                                  (jayq/append ($ :#test-div) "<span class=\"testspan\"></span>")))
 
 (def class-list (fn-with-source []
-                                (-> ($ :#content)
+                                (-> ($ :#test-div)
                                     (jayq/attr "class")
                                     (clojure.string/split " "))))
 
 (def add-class! (fn-with-source []
-                                (-> ($ :#content)
-                                    (.toggleClass "jayq"))))
+                                (-> ($ :#test-div)
+                                    (.addClass "jayq"))))
 
 (def set-style! (fn-with-source []
-                                (-> ($ :#content)
+                                (-> ($ :#test-div)
                                     (jayq/css {:backgroundColor "#aaa"}))))
