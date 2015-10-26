@@ -137,3 +137,15 @@ head, body {
 .code {
   text-align: left;
 }
+
+.min-value {
+  background-color: #FF432E;
+}
+
+.max-value {
+  background-color: #B1EB00;
+}
+
+#test-div {
+  display: none;
+}
