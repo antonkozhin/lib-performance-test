@@ -8,9 +8,17 @@
                  [enfocus "2.1.1"]
                  [jayq "2.5.4"]
                  [om "0.7.3"]
-                 [prismatic/om-tools "0.3.12"]]
+                 [prismatic/om-tools "0.3.12"]
+                 [cljsjs/react "0.14.0-0"]
+                 [cljsjs/jquery "2.1.4-0"]]
   :plugins [[lein-cljsbuild "1.1.0"]]
-  :cljsbuild {:builds [{:source-paths ["src/test"]
-                        :compiler {:output-to "resources/test.js"
-                                   :optimizations :simple
-                                   :pretty-print true}}]})
+  :cljsbuild {:builds  {:dev {:source-paths ["src/test"]
+                              :compiler {:output-to "resources/test.js"
+                                         :optimizations :whitespace
+                                         :pretty-print true}}
+                        :prod {:source-paths ["src/test"]
+                               :compiler {:output-to "resources/test.js"
+                                          :optimizations :advanced
+                                          :pretty-print true
+                                          ;:output-wrapper false
+                                          }}}})
